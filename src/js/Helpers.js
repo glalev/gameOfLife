@@ -8,5 +8,6 @@ const compose = (...fns) => {
 
 const flat = (arr) => arr.reduce((flatten, el) => flatten.concat(...el), []);
 
+const flip = (fn) => (a, b) => fn(b, a);
 
 module.exports = {compose, flat};

@@ -12,7 +12,7 @@ module.exports = {
   canvasOptions: {
     width,
     height,
-    backgroundColor: '0x555555'
+    backgroundColor: '0x333333'
   },
   initDataOptions: {
     columns: 9,

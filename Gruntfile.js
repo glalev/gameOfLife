@@ -13,14 +13,14 @@ module.exports = function (grunt) {
           // if the source file has an extension of es6 then
           // we change the name of the source file accordingly.
           // The result file's extension is always .js
-          './js/app.js': ['./src/js/App.js']
+          './public/app.js': ['./src/js/App.js']
         }
       }
     },
     uglify: {
       my_target: {
         files: {
-          './js/app.js': ['./js/app.js']
+          './public/app.js': ['./public/app.js']
         }
       }
     },

@@ -16,14 +16,14 @@ const _getRow = (options, row, index, data) => {
   const cellWidth = (width - ((columns - 1) * padding)) / columns;
   const cellHeight = (height - ((rows - 1) * padding)) / rows;
 
-  return row.map((cell, i) => { // TODO add create cell function
+  return row.map((cell, j) => { // TODO add create cell function
     const sprite = new Sprite(Texture.WHITE);
     sprite.width = cellWidth;
     sprite.height = cellHeight;
     sprite.tint = colors[cell];
-    sprite.x = i * (cellWidth + padding);
+    sprite.x = j * (cellWidth + padding);
     sprite.y = index * (cellHeight + padding);
-
+    sprite.address = {i: index, j}
     return sprite;
   });
 };
