@@ -37,5 +37,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['browserify', 'uglify']);
+  grunt.registerTask('build', ['browserify']); // TODO: uglify does not work for some reason, hence it is removed
 };

@@ -1,5 +1,5 @@
 const Helpers = require('./Helpers');
-const {Container, Graphics, Texture, Sprite} = require('pixi.js');
+const { Container, Graphics, Texture, Sprite } = require('pixi.js');
 
 const _initGridData = (len, livingPercent) => {
   return new Array(len).fill(0).map(() => Math.random() > livingPercent / 100 ? 0 : 1);
@@ -10,7 +10,7 @@ const initGridData = ({columns, rows, livingPercent}) => {
 };
 
 const _getRow = (options, row, index, data) => {
-  const {width, height, padding, colors} = options;
+  const { width, height, padding, colors } = options;
   const columns = row.length;
   const rows = data.length;
   const cellWidth = (width - ((columns - 1) * padding)) / columns;
@@ -23,7 +23,8 @@ const _getRow = (options, row, index, data) => {
     sprite.tint = colors[cell];
     sprite.x = j * (cellWidth + padding);
     sprite.y = index * (cellHeight + padding);
-    sprite.address = {i: index, j}
+    sprite.address = { i: index, j };
+
     return sprite;
   });
 };
@@ -68,7 +69,7 @@ const _getRowNextGeneration = (row, index, data) => {
   });
 };
 
-const getNextGeneration = (data) => data.map(_getRowNextGeneration);
+const getNextGeneration = ({ data }) => data.map(_getRowNextGeneration);
 
 module.exports = {
   getNextGeneration,
